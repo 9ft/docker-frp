@@ -12,12 +12,12 @@ RUN set -ex \
     && cd frp_${FRP_VERSION}_linux_amd64 \
     && cp frps /usr/local/bin \
     && cp frpc /usr/local/bin \
-    && mkdir /etc/frp \
-    && cp frps.ini /etc/frp \
-    && cp frpc.ini /etc/frp \
+    && mkdir /frp \
+    && cp frps.ini /frp \
+    && cp frpc.ini /frp \
     && cd .. \
     && rm -rf frp_${FRP_VERSION}_linux_amd64
 
-VOLUME /etc/frp
+VOLUME ["/frp"]
 
-CMD ["frps", "-c", "/etc/frp/frps.ini"]
+CMD ["frps", "-c", "/frp/frps.ini"]
