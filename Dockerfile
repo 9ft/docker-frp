@@ -2,7 +2,7 @@ FROM alpine
 
 MAINTAINER Mindy Cong "mindycong@gmail.com"
 
-ENV FRP_VERSION 0.27.0
+ENV FRP_VERSION 0.31.1
 
 RUN set -ex \
     && cd /tmp \
